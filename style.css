@@ -1,0 +1,25 @@
+img {
+    width: 100px;
+    height: 100px;
+}
+
+table {
+    border-collapse: collapse;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+td, tr {
+    padding: 2px;
+    border: solid 1px black;
+}
+
+tr:first-child {
+    width: 60px;
+}
+
+ul {
+    list-style-type: none;
+}
+

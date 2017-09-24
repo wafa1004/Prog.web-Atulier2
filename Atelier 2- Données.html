@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+        <title>Atulier 2</title>
+        <style>@import "style.css";</style>
+	</head>
+
+	<body>
+			PLAN
+			<br>
+
+            <!-- La premiere image -->
+
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/200px-HTML5_logo_and_wordmark.svg.png" alt="HTML image">
+
+            <!-- Le plan -->
+
+
+            <ul>
+                <li><a href="#add1">1. Adressage des ressources</a></li>
+				<li>
+                    <ul>
+                        <li><a href="#add11">1.1. Adresse de base</a></li>
+                        <li><a href="#add12">1.2. URL relatif</a></li>
+				    </ul>
+                </li>
+			    <li><a href="#add2">2. Élément a</a></li>
+				<li>
+                    <ul>
+                        <li><a href="#add21">2.1. Syntaxe</a></li>
+                        <li><a href="#add22">2.2. Définition d'une destination à l'intérieur du document</a></li>
+				    </ul>
+                </li>
+                <li><a href="#add3">3. Règles de style CSS selon l'état de l'hyperlien</a></li>
+			</ul>
+
+            <!-- Introduction -->
+
+			 Introduction
+			Un hyperlien permet de lier un document HTML avec une autre ressource du Web: image, programme, document HTML (voir http://www.w3schools.com/), section dans un document HTML,<br>
+			•	Un hyperlien à 2 extrémités appelées ancres: la source: point de départ de l'hyperlien et la destination: point d'arrivée du lien. <br>
+			•	La destination de l'hyperlien est donnée par son URL <br>
+			•	Élément a (a pour ancre) <br>
+			<h1 id="add1">1. Adressage des ressources</h1>
+			<h1 id="add11">1.1. Adresse de base </h1>
+			Chaque adresse URL a une adresse de base : c’est la partie de l’URL excluant ce qui suit le dernier « / ».<br> 
+			Par exemple : <br>
+			L’adresse de base de  http://www.uqtr.ca/~touref/INF1001/index.html est 
+			http://www.uqtr.ca/~touref/INF1001/ 
+			Habituellement le navigateur considère que l’adresse de base par défaut est l’adresse de base du document. La balise &lt;base&gt; dans l’entête du document permet donner une adresse de base par défaut différente de celle du document.
+			<h1 id="add12">1.2. URL relatif </h1>
+			L'attribut href spécifie l'URL de la destination de l'hyperlien. Cet URL peut être <br>
+			o	Absolu: pour identifier une ressource indépendamment du contexte. <br>
+			http://www.tuteurs.ens.fr/internet/web/html/bases.html <br>
+			o	Relatif: pour identifier une ressource dépendamment du contexte. <br> Ce contexte est donné par l'adresse de base.
+
+			<br>
+			Par exemple, si l'adresse de base est 
+			http://www.uqtr.ca/~touref/INF1001/documents/, 
+			alors l'URL relatif 
+			lien/lesport.jpg 
+			désigne l'URL absolu 
+
+			http://www.uqtr.ca/~touref/INF1001/documents/lien/lesport.jpg
+			<br>
+			Tableau 1:Symboles utilisés dans les URL relatifs:
+            <br>
+
+            <!-- Tableau1 -->
+
+			<table>
+				<tr>
+					<td>.</td> <td>Répertoire courant </td>
+				</tr>
+				<tr>
+					<td>..</td> <td>Répertoire parent </td>
+				</tr>
+				<tr>
+					<td>/</td> <td>Remplace le répertoire de base </td>
+				</tr>
+				<tr>
+					<td>//</td> <td>Remplace à partir du nom du serveur</td>
+				</tr>
+			</table>
+
+            <!-- Tableau2 -->
+
+
+            Exemples :
+			Adresse de base 	http://www.uqtr.ca/~touref/INF1001/
+
+			<table>
+				<tr>
+					<td>URL relatif</td> <td>URL absolu</td>
+				</tr>
+				<tr>
+					<td>accueil.xhtml</td> <td>http://www.uqtr.ca/~touref/INF1001/accueil.xhtml </td>
+				</tr>
+				<tr>
+					<td>documents/</td> <td>http://www.uqtr.ca/~touref/INF1001/Document/</td>
+				</tr>
+				<tr>
+					<td>documents/index.xhtml</td> <td>http://www.uqtr.ca/~touref/INF1001/Document/index.xhtml</td>
+				</tr>
+				<tr>
+					<td>./</td> <td>http://www.uqtr.ca/~touref/INF1001/</td>
+				</tr>
+				<tr>
+					<td>./accueil.xhtml</td> <td>http://www.uqtr.ca/~touref/INF1001/accueil.xhtml</td>
+				</tr>
+				<tr>
+					<td>../</td> <td>http://www.uqtr.ca/~touref/ </td>
+				</tr>
+				<tr>
+					<td>../liens/lesport.jpg</td> <td>http://www.uqtr.ca/~touref/ </td>
+				</tr>
+				<tr>
+					<td>../../</td> <td>http://www.uqtr.ca/~touref/ liens/lesport.jpg </td>
+				</tr>
+				<tr>
+					<td>../../../</td> <td>http://www.uqtr.ca/~touref/ </td>
+				</tr>
+				<tr>
+					<td>/</td> <td>http://www.uqtr.ca/ </td>
+				</tr>
+				<tr>
+					<td>/~toupin/</td> <td>http://www.uqtr.ca/~toupin/</td>
+				</tr>
+				<tr>
+					<td>/index.xhtml</td> <td>http://www.uqtr.ca/index.xhtml </td>
+				</tr>
+				<tr>
+					<td>//www.internet.com/</td> <td>http://www.internet.com/ </td>
+				</tr>
+			</table>		
+			
+			<h1 id="add2">2. Élément a </h1>
+			•	Établit une relation entre une partie d'un document HTML et une autre ressource <br>
+			•	Permet de définir la source du lien et la destination du lien. <br>
+			•	L'attribut href donne l’URL de la destination du lien. <br>
+			•	Le contenu de la balise a est la source du lien <br>
+			•	L'activation de l'hyperlien (habituellement cliquer sur le lien) permet d'accéder à la ressource définie par la destination du lien. 
+			<a href="http://www.tuteurs.ens.fr/internet/web/html/bases.html">Tutoriel XHTML</a> 
+			Source du lien:" Tutoriel XHTML "
+			Destination de lien:" http://www.tuteurs.ens.fr/internet/web/html/bases.html "
+
+			<h1 id="add21">2.1. Syntaxe </h1>
+
+			•	L'élément a s'ajoute à l'ensemble de contenu Inline du module Text <br>
+			•	Le contenu de l'élément a doit être de niveau texte mais ne doit pas contenir d'élément a.
+			<h1 id="add22">2.2. Définition d'une destination à l'intérieur du document </h1>
+			•	Il est possible de faire un hyperlien vers une section du document. <br>
+			•	On utilise l'attribut id (pour identificateur) pour spécifier une section du document 
+			<h1 id="objSpec">OBJECTIFS SPÉCIFIQUES </h1>
+			•	La valeur de l’attribut id a une syntaxe prédéfinie : 
+			Elle commence par 
+			<br>
+			-	une lettre, 
+						<br>
+			-	le caractère "_" ou 
+						<br>
+			-	le caractère ":" et 
+						<br>
+			Les autres caractères sont 
+						<br>
+			-	des lettres, 
+						<br>
+			-	chiffres, 
+						<br>
+			-	le caractère "_",
+						<br>			
+			-	le caractère "-",
+						<br>			
+			-	le caractère ":" ou 
+						<br>
+			-	le caractère "." 
+			<br>
+            <br>
+			•	On peut par la suite utiliser cet identificateur comme destination d'un lien 
+			<br>
+            •	Il suffit d'utiliser le symbole # (dièse) devant le nom de la section comme valeur de l'attribut href. On parle alors d'identificateur de fragment.
+			<a href="#objSpec">OBJECTIFS SPÉCIFIQUES</a>
+			<br>
+            •	L'identificateur de fragment peut être utilisé avec un adressage relatif ou absolu
+			<br>
+            Exemple:
+            <br>
+			Utilisation d'hyperliens pour créer une table de matières en début d'un document {ICI(http://www.uqtr.ca/~touref/INF1001/documents/lien/exemplesTables.xhtml)}
+			<h1 id="add3">3. Règles de style CSS</h1>
+
+            <!-- La deuxieme image -->
+
+
+            <img src= "http://php.quicoto.com/wp-content/uploads/2013/06/css3.jpg" alt="CSS image"> <br>selon l'état de l'hyperlien
+			En CSS on considère qu'un hyperlien peut être dans l'un des états suivants : <br>
+			•	link : un lien qui n’a pas encore été visité <br>
+			•	visited: un lien qui a été visité <br>
+			•	active: un lien pointé par l’usager. <br>
+			Si on veut avoir des déclarations de style distinctes selon l’état d’un élément a on utilise ce qui est appelé en CSS des pseudo-classes. (On parle de pseudo-classe parce que ce qui particularise l’élément a n’est pas la valeur de l’attribut class mais l’état de l’élément.) <br>
+			•	En CSS1 on a les pseudo-classes a:link (lien non visité),
+            <br>a:visited (lien visité) et a:active (lien actif). <br>
+			a:link<br>
+			a:visited<br>
+			Si on veut utiliser des pseudo-classes, il est important de les mentionner dans cet ordre : link, visited et active.
+	</body>
+</html>
